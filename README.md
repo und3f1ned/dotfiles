@@ -6,7 +6,7 @@
 ## Setup
 
 ```
-curl -L https://github.com/eprev/dotfiles/raw/master/bin/dot-install | bash
+curl -L https://github.com/und3f1ned/dotfiles/raw/master/bin/dot-install | bash
 ```
 
 In addition, the following steps may be required:
