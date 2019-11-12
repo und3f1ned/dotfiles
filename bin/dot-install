@@ -1,11 +1,32 @@
 #!/usr/bin/env bash
 
-if [ -d $HOME/.dotfiles ]; then
-    cd $HOME/.dotfiles
-    git pull origin master
-else
-    git clone https://github.com/eprev/dotfiles.git $HOME/.dotfiles
-    grep -q "\.dotfiles/bashrc" $HOME/.bashrc || echo "source ~/.dotfiles/bashrc" >> $HOME/.bashrc
+if [ -z "$DOTFILES_PATH" ]; then
+  export DOTFILES_PATH=$HOME/.dotfiles
 fi
 
-$HOME/.dotfiles/bin/dot-link-files
+if [ -d "$DOTFILES_PATH" ]; then
+  echo "Updating '$DOTFILES_PATH'..."
+  cd "$DOTFILES_PATH"
+  git pull origin master
+else
+  echo "Installing to '$DOTFILES_PATH'..."
+  git clone https://github.com/und3f1ned/dotfiles.git $DOTFILES_PATH
+  echo "source $DOTFILES_PATH/bashrc" >> $HOME/.bashrc
+  echo "source $DOTFILES_PATH/bash_profile" >> $HOME/.bash_profile
+  cd $DOTFILES_PATH
+fi
+
+git submodule init
+git submodule update
+
+# Link ~/. files
+./bin/dot-link-files
+
+# Install fzf
+hash fzf &>/dev/null
+if [ $? -ne 0 ]; then
+  $DOTFILES_PATH/fzf/install
+fi
+
+# Have fun!
+source $HOME/.bash_profile

@@ -1,25 +1,26 @@
-# ~/.*
-
-![](screenshot.png)
-![](screenshot-vim.png)
+# ~/.\*
 
 ## Setup
 
-```
-curl -L https://github.com/und3f1ned/dotfiles/raw/master/bin/dot-install | bash
-```
+1. Run:
 
-In addition, the following steps may be required:
+   ```
+   curl -L https://github.com/und3f1ned/dotfiles/raw/master/bin/dot-install | bash
+   ```
 
-* If you want to use [TagBar](http://majutsushi.github.io/tagbar/), you need to install exuberant-ctags (or simply run `dot-install-osx`):
+2. Don't forget to update user details in `~/.gitconfig`.
 
-    ```
-    brew install ctags-exuberant
-    ```
+3. In addition, the following steps may be required:
 
-* You might want to try [locationchanger](https://github.com/eprev/locationchanger).
+   - If you want to use [TagBar](http://majutsushi.github.io/tagbar/), you need to install exuberant-ctags (or simply run `dot-install-osx`):
 
-* Like the font in the screenshot? It's [Input Font](http://input.fontbureau.com/) (InputMonoCondensed-Light, 13pt).
+     ```
+     brew install ctags-exuberant
+     ```
+
+   - You might want to try [locationchanger](https://github.com/eprev/locationchanger).
+
+   - Like the font in the screenshot? It's [Input Font](http://input.fontbureau.com/) (InputMonoCondensed-Light, 13pt).
 
 ## Update
 

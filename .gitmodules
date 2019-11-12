@@ -1,0 +1,39 @@
+[submodule "vim/pack/default/start/coc"]
+	path = vim/pack/default/start/coc
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule "fzf"]
+	path = fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "vim/pack/default/start/fzf"]
+	path = vim/pack/default/start/fzf
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/pack/default/start/tagbar"]
+	path = vim/pack/default/opt/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/pack/default/start/tabular"]
+	path = vim/pack/default/opt/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "vim/pack/default/start/tcomment"]
+	path = vim/pack/default/start/tcomment
+	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "vim/pack/default/start/vim-gitgutter"]
+	path = vim/pack/default/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/pack/default/start/editorconfig"]
+	path = vim/pack/default/start/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "tmux/plugins/copycat"]
+	path = tmux/plugins/copycat
+	url = https://github.com/tmux-plugins/tmux-copycat.git
+[submodule "tmux/plugins/open"]
+	path = tmux/plugins/open
+	url = https://github.com/tmux-plugins/tmux-open.git
+[submodule "tmux/plugins/ressurect"]
+	path = tmux/plugins/resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
+[submodule "tmux/plugins/yank"]
+	path = tmux/plugins/yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "vim/pack/default/start/yats"]
+	path = vim/pack/default/start/yats
+	url = https://github.com/eprev/yats.vim.git

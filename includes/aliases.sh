@@ -1,52 +1,50 @@
-# https://raw.github.com/mathiasbynens/dotfiles/master/.aliases
+# sh.vim: bash
+
+# Inspired by https://raw.github.com/mathiasbynens/dotfiles/master/.aliases
 
 # dotfiles
-
 alias dot-update="dot-install"
 
 # Easier navigation: .. and -
 alias ..="cd .."
 alias -- -="cd -"
 
-# Sublime
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
-
-# Tmux
-alias ta="tmux attach"
-
 # Shortcuts
-alias d="cd ~/Dropbox"
+alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Developer"
 alias v="vim"
+alias xv="xargs bash -c '</dev/tty vim -p \"\$@\"' dummy"
 alias y="yarn"
 alias g="git"
-alias xg="xargs git"
-alias gg="git gre"
-alias ga="git gra"
-alias gp="while true; do git pull || break; git push && break; done"
-alias h="history"
-alias j="jobs"
-alias v="vim"
+alias gp="while true; do git pull --rebase || break; git push && break; done"
+alias gg="git gre" # grep in the current directory
+alias ga="git gra" # grep in the repository
+alias xg="xargs -r git"
 alias t="tmux"
-alias s="subl ."
+alias ta="tmux attach"
+alias f="fzf"
+alias pb="passbox"
+alias k="kubectl"
+
+# OS X
 alias o="open"
 alias oo="open ."
-alias pb="passbox"
-
-alias grep='GREP_COLOR="1;37;45" LANG=C grep --color=auto'
-alias ip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'"
+alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
-    # export LS_COLORS='exfxcxdxbxegedabagacad'
 else # OS X `ls`
     colorflag="-G"
-    # export LSCOLORS='exfxcxdxbxegedabagacad'
 fi
+
+# Beatiful grep
+alias grep='grep --color=auto'
+
+# My IP
+alias ip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'"
 
 # List all files colorized in long format
 alias l="ls -l ${colorflag}"
@@ -68,12 +66,6 @@ alias gurl="curl --compressed"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-alias freewifi="sudo ifconfig en0 ether `openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`"
-
-# View HTTP traffic
-# alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
-# alias httpdump="sudo tcpdump -i any -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
@@ -117,8 +109,3 @@ alias badge="tput bel"
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="lwp-request -m '$method'"
 done
-
-# Intuitive map function
-# For example, to list all directories that contain a certain file:
-# find . -name .gitattributes | map dirname
-alias map="xargs -n1"

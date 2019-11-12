@@ -19,6 +19,8 @@ brew tap caskroom/cask
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
+brew install coreutils
+brew install grep
 
 # Install Bash 4.
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
@@ -43,6 +45,7 @@ brew install ssh-copy-id
 brew install tree
 brew install ctags-exuberant
 brew install tmux
+brew install jq
 brew install ffmpeg --with-libvpx
 brew install qpdf
 brew install fswatch
@@ -68,17 +71,25 @@ brew cask install webpquicklook
 brew install node
 brew install yarn
 
+# Installing N
+npm install -g n
+
 # Installing postcss-sorting (required by vim's css-sorting)
 npm install -g postcss-cli postcss-sorting
 
+# Typescript
+npm -g install typescript
+
 # Installing JS tools
 npm install -g eslint
+npm install -g prettier
+
+# NPX
+npm install -g npx
 
 # Installing jekyll
 gem install jekyll --user-install
 gem install bundler --user-install
 
-# fzf
-brew install fzf
-$(brew --prefix)/opt/fzf/install
-
+# Ripgrep
+brew install ripgrep

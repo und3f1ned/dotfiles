@@ -10,3 +10,4 @@ vim/ftdetect/tmpl.vim
 vim/plugin/booking.vim
 vim/syntax/tmpl.vim
 vim/view
+vim/sessions
