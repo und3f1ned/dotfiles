@@ -58,7 +58,7 @@
     # Graph
     lg = log --graph --pretty="format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]"
 
-    me = log --author=eprev
+    me = log --author=changeme
 
     ### Log commands to inspect (recent) history
 
